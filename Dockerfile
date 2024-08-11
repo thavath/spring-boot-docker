@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 
 # Run Step
 FROM amazoncorretto:21
-ARG PROFILE=dev
+ARG PROFILE=production
 ARG APP_VERSION=1.0.0
 
 WORKDIR /app
