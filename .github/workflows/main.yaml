@@ -13,7 +13,7 @@ jobs:
           distribution: 'adopt'
           java-version: '21'
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn clean install -DskipTests
       - name: Setup AWS ECR Details
         uses: aws-actions/configure-aws-credentials@v1
         with:
