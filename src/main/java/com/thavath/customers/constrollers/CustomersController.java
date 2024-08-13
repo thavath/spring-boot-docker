@@ -35,7 +35,7 @@ public class CustomersController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<Customer> save(@RequestBody Customer customer){
-         producerService.send(appProperties.getTopic(), customer.getName(), gson.toJson(customer));
+        producerService.send(appProperties.getTopic(), customer.getName(), gson.toJson(customer));
         return customerService.save(customer);
     }
     @PutMapping

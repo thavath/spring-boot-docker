@@ -30,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Mono<Customer> save(Customer customer) {
         customer.setId(UUID.randomUUID().toString());
+        log.info(customer.getId());
         return customerRepository.save(customer).map(entity -> entity);
     }
 
